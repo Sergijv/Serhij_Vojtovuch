@@ -13,28 +13,17 @@ Create an array of employees and add the employees with different form of paymen
 Arrange the entire sequence of workers descending the average monthly wage. Output the employee ID, name,
  and the average monthly wage for all elements of the list.
 */
-SalariedEmployee s1=new SalariedEmployee();
-s1.setSocialSecurityNumber("ID1");
-s1.setSolary(2000);
+        Employee employees[] = {
+        new SalariedEmployee("ID1",1400, "Max"),
+        new SalariedEmployee("ID2",1500, "Jon"),
+        new ContractEmployee ("ID3",34, 160,"Ed"),
+        new ContractEmployee("ID4",5, 130,"Rey")
+        };
 
-SalariedEmployee s2=new SalariedEmployee();
-s2.setSocialSecurityNumber("ID2");
-s2.setSolary(2000);
+        Employee.teamUp(employees);
 
-ContractEmployee c1=new ContractEmployee(23,45);
-c1.setfederalTaxIdmember("ID3");
+        Employee.arrangeEmployee(employees);
 
-ContractEmployee c2=new ContractEmployee(40,27);
-c2.setfederalTaxIdmember("ID4");
-
-        Employee employees[]  = new Employee[4];
-        employees[0]=c1;
-        employees[0]=c1;
-        employees[0]=s1;
-        employees[0]=s2;
-        for (Employee e:employees) {
-            e.toString();
-        }
     }
 
 }

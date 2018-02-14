@@ -1,6 +1,7 @@
 package Lesson6_in_Home;
 
 public class ContractEmployee extends Employee {
+
     public String getfederalTaxIdmember(){
         return employeeid;
     }
@@ -8,25 +9,23 @@ public class ContractEmployee extends Employee {
         employeeid=federalTaxIdmember;
     }
 
-    int hourlyRate;
-    int nomberHourMonth;
-    int Solary=hourlyRate*nomberHourMonth;
+    private int hourlyRate;
+    private int nomberHourMonth;
+
 
     @Override
-    int CalculatePay() {
+    public int calculatePay() {
         return hourlyRate*nomberHourMonth;
     }
 
-    public ContractEmployee(int hourlyRate, int nomberHourMonth) {
+
+    ContractEmployee(String federalTaxIdmember, int hourlyRate, int nomberHourMonth, String name) {
         this.hourlyRate = hourlyRate;
         this.nomberHourMonth = nomberHourMonth;
+        super.name=name;
+        super.solary=hourlyRate*nomberHourMonth;
+        super.employeeid=federalTaxIdmember;
+
     }
 
-    @Override
-    public String toString() {
-        return "ContractEmployee{" +
-                "employeeid='" + employeeid + '\'' +
-                ", solary=" + solary +
-                '}';
-    }
 }
