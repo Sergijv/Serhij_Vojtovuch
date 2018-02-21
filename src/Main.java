@@ -35,10 +35,12 @@ public class Main {
     private static double div(double a, double b) {
     return a/b;
     }
-    private static String readNumber(int start, int end) throws Exception{
+    private static int readNumber(int start, int end) throws Exception{
         Scanner scan=new Scanner(System.in);
         int n = scan.nextInt();
-        if ((n>start)&&(n<end))return String.valueOf(n);
-        else return "Out of bond";
+        if ((n<start)||(n>end)) throw new Exception();
+        return n;
+
     }
+
 }
