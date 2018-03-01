@@ -37,6 +37,7 @@ public class Main {
         //these 10 people?
 
 
+        System.out.println();
         System.out.println("Task2");
         MyMap myMap=new MyMap();
         Map<String, String> personMap = new HashMap<String, String>();
@@ -59,6 +60,35 @@ public class Main {
         //different students
         //display the list of students ordered by name
         //display the list of students ordered by course.
+        System.out.println("Task3");
+        Student s1 = new Student("a1",2);
+        Student s2 = new Student("a2",1);
+        Student s3 = new Student("a3",3);
+        Student s4 = new Student("a4",5);
+        Student s5 = new Student("a5",2);
+
+        System.out.println("Count: "+Student.count);
+
+       ArrayList<Student> studentList =Student.stList;
+
+        System.out.println("List size "+studentList.size());
+
+        Student.printAllStudents(studentList);
+        Comparator cn= new Student.NameComparator();
+        System.out.println("Sort by name");
+       studentList.sort(cn );
+       Student.printAllStudents(studentList);
+
+        Comparator cc= new Student.CourseComparator();
+        System.out.println("Sort by course");
+        studentList.sort(cc );
+        Student.printAllStudents(studentList);
+
+
+        System.out.println("Sort by 2 course");
+        Student.printStudents(studentList,2);
+
+
 
 
     }
